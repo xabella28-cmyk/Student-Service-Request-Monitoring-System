@@ -3,5 +3,5 @@ pandas
 numpy
 scikit-learn==1.6.1
 joblib
-plotly
+plotly==6.3.1
 matplotlib
