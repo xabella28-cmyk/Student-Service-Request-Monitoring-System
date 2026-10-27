@@ -13,7 +13,7 @@ def make_prediction_input(values,bundle):
         if (frame[col]<0).any(): raise ValueError(f'{col} cannot be negative.')
     return frame
 def predict_one(values,bundle):
-    X=make_prediction_input(values,bundle); pipe=bundle['pipeline']; cls=int(pipe.predict(X)[0]); prob=None
+   X=make_prediction_input(values,bundle); pipe=bundle['model']; cls=int(pipe.predict(X)[0]); prob=None
     if hasattr(pipe,'predict_proba'):
         classes=list(pipe.classes_)
         if 1 in classes: prob=float(pipe.predict_proba(X)[0][classes.index(1)])
